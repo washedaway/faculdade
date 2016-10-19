@@ -15,14 +15,27 @@ float media;
 
 main (){
 	for(i = 0; i < 10; i++){
-		printf("Digite respectivamente a matricula e a idade");
+		printf("Digite respectivamente a matricula e a idade: ");
 		scanf("%d",&mat[i]);
 		scanf("%d",&idade[i]);
+		
 		if(idade[i] > maior){
 			maior = idade[i];
-		}
+			}
 		media += idade[i];
+		}
+	
+	media /= 10;
+	
+	printf("A maior idade eh: %d\n", maior);
+	printf("A media das idades eh: %.1f\n", media);
+	
+	printf("Alunos com idade maior que a media: \n");
+	for(i = 0; i < 10; i++){
+		if(idade[i] > media){
+			printf("Matricula: %d\n Idade: %d\n\n", mat[i], idade[i]);
+		}
 	}
-
+	
 	getch();
 }
